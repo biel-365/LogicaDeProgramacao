@@ -61,6 +61,8 @@ const parOuImpar = (numero) => {
   }
 };
 parOuImpar(150);
+parOuImpar(149);
+parOuImpar(148);
 
 console.log("-------Ativadade 2----------");
 var1 = 3;
@@ -90,11 +92,10 @@ console.log("Fatorial de 6!=", 6 * 5 * 4 * 3 * 2 * 1);
 console.log("-------Atividade 4-------");
 
 let numeros = [20, 40, 60, 100];
-let somando = numeros[0] + numeros[1] + numeros[2] + numeros[3];
-console.log("A soma de tudo é", somando);
+let soma = numeros[0] + numeros[1] + numeros[2] + numeros[3];
+console.log("A soma de tudo é", soma);
 
 console.log("-------Atividade 5-------");
 var vetor = [8, 3, 5, 1, 9];
 console.log(vetor);
-vetor.sort();
-console.log(vetor)
+console.log(vetor.sort());
