@@ -99,3 +99,35 @@ console.log("-------Atividade 5-------");
 var vetor = [8, 3, 5, 1, 9];
 console.log(vetor);
 console.log(vetor.sort());
+
+console.log("--------------------------------------");
+
+/***************************************************** 
+                Exercícios para fixação 
+*****************************************************/ 
+/* Estourando o cartão - Versão While, utilizando o navegador
+1. Crie uma variável e solicite o nome de uma pessoa; 
+2. Crie uma variável e solicite o nome de um banco; 
+3. Crie uma variável e solicite o número da agência; 
+4. Crie uma variável e solicite o número da conta; 
+5. Crie uma variável e solicite o saldo da conta; 
+6. Imprima os dados e o saldo da conta; 
+7. Efetue e imprima 5 movimentações na conta; 
+8. Imprima novamente os dados e o saldo da conta;
+*/ 
+
+var nome = prompt("Informe seu nome");
+var banco = prompt("Informe o banco afiliado");
+var agencia = prompt("Informe sua agência");
+var conta = prompt("Informe o número do seu cartão");
+var saldo = prompt("Qual é o seu saldo?");
+console.log(`Olá, ${nome}! Seu Banco é: ${banco} Sua agência é: ${agencia} Seu número de cartão é: ${conta} E possui: ${saldo} de dinheiro.`)
+
+var saldo = 1000
+var contador = 1;
+while(contador <= 5){
+  let gasto = Math.random()*100; // Valor aleatório entre 0 e 99.999...
+  saldo -= gasto.toFixed(2);
+  contador++;
+}
+console.log(saldo.toFixed(2)); // Deixa o valor decimal somente com 2 casas
