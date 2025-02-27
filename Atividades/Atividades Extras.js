@@ -116,18 +116,27 @@ console.log("--------------------------------------");
 8. Imprima novamente os dados e o saldo da conta;
 */ 
 
-var nome = prompt("Informe seu nome");
-var banco = prompt("Informe o banco afiliado");
-var agencia = prompt("Informe sua agência");
-var conta = prompt("Informe o número do seu cartão");
-var saldo = prompt("Qual é o seu saldo?");
-console.log(`Olá, ${nome}! Seu Banco é: ${banco} Sua agência é: ${agencia} Seu número de cartão é: ${conta} E possui: ${saldo} de dinheiro.`)
+// var nome = prompt("Informe seu nome");
+// var banco = prompt("Informe o banco afiliado");
+// var agencia = prompt("Informe sua agência");
+// var conta = prompt("Informe o número do seu cartão");
+// var saldo = prompt("Qual é o seu saldo?");
+// console.log(`Olá, ${nome}! Seu Banco é: ${banco} Sua agência é: ${agencia} Seu número de cartão é: ${conta} E possui: ${saldo} de dinheiro.`)
 
-var saldo = 1000
-var contador = 1;
-while(contador <= 5){
-  let gasto = Math.random()*100; // Valor aleatório entre 0 e 99.999...
-  saldo -= gasto.toFixed(2);
-  contador++;
-}
-console.log(saldo.toFixed(2)); // Deixa o valor decimal somente com 2 casas
+// var saldo = 1000
+// var contador = 1;
+// while(contador <= 5){
+//   let gasto = Math.random()*100; // Valor aleatório entre 0 e 99.999...
+//   saldo -= gasto.toFixed(2);
+//   contador++;
+// }
+// console.log(saldo.toFixed(2)); // Deixa o valor decimal somente com 2 casas
+
+// Jogo cara e coroa - melhor três rodadas - aleatório com Do-While
+
+var rodadas = 1;
+do {
+  let face = Math.random()* 100;
+  face < 50 ? console.log("É cara") : console.log("É coroa");
+  rodadas++;
+} while (rodadas <= 4)
