@@ -1,0 +1,266 @@
+// Lista de Exercícios de Lógica de Programação em JavaScript
+// 1. Variáveis e Operações Matemáticas
+// 1. Declare três variáveis numéricas e exiba no console a soma, subtração, multiplicação e divisão entre elas.
+console.log("-------------------------01-------------------------");
+var num1 = 10;
+var num2 = 20;
+var num3 = 5;
+
+console.log(`A soma entre ${num1} + ${num2} + ${num3} é ${num1 + num2 + num3}`);
+console.log(
+  `A subtração entre ${num1} - ${num2} - ${num3} é ${num1 - num2 - num3}`
+);
+console.log(
+  `A multiplicação entre ${num1} * ${num2} * ${num3} é ${num1 * num2 * num3}`
+);
+console.log(
+  `A divisão entre ${num1} / ${num2} / ${num3} é ${num1 / num2 / num3}`
+);
+
+// 2. Crie três variáveis representando as notas de um aluno e calcule sua
+// média. Se a média for maior ou igual a 7, exiba "Aprovado", senão,
+// "Reprovado".
+console.log("-------------------------02-------------------------");
+var nota1 = 8;
+var nota2 = 7;
+var nota3 = 6;
+var mediaMate = (nota1 + nota2 + nota3) / 3;
+// if (mediaMate >= 7) {
+//   console.log(`Aprovado!`);
+// } else {
+//   console.log(`Reprovado!`);
+// }
+mediaMate >= 7 ? console.log(`Aprovado!`) : console.log(`Reprovado!`);
+
+// 3. Dado um salário bruto de R$3.000,00, calcule o salário líquido
+// considerando um desconto de 8% de INSS e 5% de imposto de renda.
+console.log("-------------------------03-------------------------");
+var salBruto = 3000;
+var descontoINSS = salBruto * 0.08;
+var descontoIR = salBruto * 0.05;
+var salLiquido = salBruto - descontoINSS - descontoIR;
+
+console.log(`Salário líquido do funcionário é R$${salLiquido.toFixed(2)}`);
+
+// 4. Considere um círculo com raio de 7cm. Calcule e exiba a circunferência e a área do círculo (use Math.PI).
+console.log("-------------------------04-------------------------");
+var raio = 7;
+var circunferencia = 2 * Math.PI * raio;
+var area = Math.PI * Math.pow(raio, 2);
+console.log(`Circunferência: ${circunferencia.toFixed(2)}`);
+console.log(`Area: ${area.toFixed(2)}`);
+
+// 5. Uma loja de eletrônicos vende celulares a R$1.500,00 cada e oferece
+// desconto progressivo:
+// o 5% para compras de 2 unidades;
+// o 10% para compras de 3 unidades;
+// o 15% para compras de 4 ou mais unidades. Exiba o valor final a pagar
+// para cada quantidade.
+console.log("-------------------------05-------------------------");
+var precoCelular = 1500;
+
+const calculaPrecoFinal = (quantidade) => {
+  let desconto = 0;
+  if (quantidade == 2) {
+    desconto = 0.05;
+  } else if (quantidade == 3) {
+    desconto = 0.1;
+  } else if (quantidade >= 4) {
+    desconto = 0.15;
+  }
+
+  let precoFinal = precoCelular * quantidade * (1 - desconto);
+  console.log(
+    `Valor final para ${quantidade} unidade é R$${precoFinal.toFixed(2)}`
+  );
+};
+calculaPrecoFinal(2);
+calculaPrecoFinal(3);
+calculaPrecoFinal(4);
+
+// 2. Estruturas Condicionais (IF, ELSE)
+// 6. Dado um número qualquer, exiba se ele é múltiplo de 3, múltiplo de 5 ou múltiplo de ambos.
+console.log("-------------------------06-------------------------");
+var numero = 11;
+
+if (numero % 3 == 0 && numero % 5 == 0) {
+  console.log(`Multiplo de 3 e de 5.`);
+} else if (numero % 3 == 0) {
+  console.log(`Multiplo de 3.`);
+} else if (numero % 5 == 0) {
+  console.log(`Multiplo de 5.`);
+} else {
+  console.log(`Não multiplo de 3 e 5.`);
+}
+
+// 7. Determine se um ano específico (exemplo: 2024) é bissexto (divisível por 4 e não por 100, exceto se for divisível por 400).
+console.log("-------------------------07-------------------------");
+var ano = 2024;
+
+if ((ano % 4 === 0 && ano % 100 !== 0) || ano % 400 === 0) {
+  console.log(`${ano} é bissexto`); // Ano bissexto
+} else {
+  console.log(`${ano} não é bissexto`); // Ano não bissexto
+}
+
+// 8. Dado um número de 0 a 6, exiba o dia da semana correspondente (0 =
+// Domingo, 1 = Segunda...).
+console.log("-------------------------08-------------------------");
+var diaNumero = 2;
+var diaSemana = [
+  "Domingo",
+  "Segunda-feira",
+  "Terça-feira",
+  "Quata-feira",
+  "Quinta-feira",
+  "Sexta-feira",
+  "Sábado",
+];
+console.log(diaSemana[diaNumero]);
+
+// 9. Se um motorista ultrapassar um limite de velocidade de 80km/h, ele será multado. Para cada km acima do limite, a multa custa R$5,00. Determine o valor da multa para um carro a 95km/h.
+console.log("-------------------------09-------------------------");
+var limite = 80;
+var velocidade = 95;
+var multa = 0;
+
+if (velocidade > limite) {
+  multa = (velocidade - limite) * 5;
+  console.log(`O valor da multa é de R$${multa.toFixed(2)}`);
+}
+
+// 10. Crie um programa que, dado o preço de um produto, aplique um desconto conforme a seguinte tabela:
+// o Menos de R$50,00: sem desconto.
+// o Entre R$50,00 e R$100,00: 5% de desconto.
+// o Acima de R$100,00: 10% de desconto.
+console.log("-------------------------10-------------------------");
+var precoProduto = 120;
+var desconto;
+
+if (precoProduto < 50) {
+  desconto = 0; // Sem desconto
+} else if (precoProduto >= 50 && precoProduto <= 100) {
+  desconto = 0.05; // 5% de d/esconto
+} else {
+  desconto = 0.1; // 10% de desconto
+}
+
+var precoFinalProduto = precoProduto * (1 - desconto);
+console.log("Preço final do produto:", precoFinalProduto);
+
+// 3. Laços de Repetição (FOR, WHILE)
+// 11. Exiba todos os números pares entre 1 e 50.
+console.log("-------------------------11-------------------------");
+for (let i = 2; i <= 50; i += 2) {
+  console.log(i); // Exibe números pares
+}
+
+// 12. Exiba a tabuada do número 9 (de 9 × 1 até 9 × 10).
+console.log("-------------------------12-------------------------");
+for (let i = 1; i <= 10; i++) {
+  console.log(`9 x ${i} = ${9 * i}`); // Exibe a tabuada do 9
+}
+
+// 13. Some os números de 1 a 100 e exiba o resultado.
+console.log("-------------------------13-------------------------");
+var soma1 = 0;
+for (let i = 1; i <= 100; i++) {
+  soma1 += i;
+}
+console.log(`A soma dos números de 1 a 100 é: ${soma1}`);
+
+// 14. Dado um array [3, 5, 7, 9, 11], exiba a soma de seus elementos.
+console.log("-------------------------14-------------------------");
+var array = [3, 5, 7, 9, 11];
+var somaArray;
+// for (let i = 0; i < array.length; i++) {
+//   somaArray += array[i];
+// }
+// console.log(`Soma dos elementos do array: ${somaArray}`);
+
+var somaArray = array.reduce((anterior, atual) => anterior + atual, 0); // Soma os elementos do array
+console.log(`Soma dos elementos do array: ${somaArray}`);
+
+// 15. Crie um contador regressivo que comece em 10 e exiba cada número até 0.
+console.log("-------------------------15-------------------------");
+for (let i = 10; i >= 0; i--) {
+  console.log(i); // Exibe o contador regressivo
+}
+
+// 4. Vetores e Manipulação de Strings
+// 16. Crie um array com os dias da semana e exiba a quarta-feira.
+console.log("-------------------------16-------------------------");
+var diaNumero = 3;
+var diaSemana = [
+  "Domingo",
+  "Segunda-feira",
+  "Terça-feira",
+  "Quata-feira",
+  "Quinta-feira",
+  "Sexta-feira",
+  "Sábado",
+];
+console.log(diaSemana[diaNumero]);
+// 17. Crie um array com cinco frutas e remova a terceira fruta da lista.
+console.log("-------------------------17-------------------------");
+var frutas = ["Maçã", "Banana", "Laranja", "Manga", "Uva"];
+frutas.splice(2, 1); // Remove a terceira fruta (índice 2)
+console.log("Frutas após remoção:", frutas);
+
+// 18. Crie um array de números e exiba apenas os números maiores que 10.
+console.log("-------------------------18-------------------------");
+var array = [13, 5, 17, 9, 11];
+var maior10 = array.filter((num) => num > 10);
+console.log(`Numeros maiores que 10: ${maior10}`);
+console.table(maior10);
+
+// 19. Transforme a string "JavaScript é incrível!" em maiúsculas e exiba no console.
+console.log("-------------------------19-------------------------");
+var frase = "JavaScript é incrível!";
+console.log(frase.toUpperCase());
+
+// 20. Dada a string "A vida é bela e cheia de desafios", exiba quantas palavras existem nela.
+console.log("-------------------------20-------------------------");
+var frase = "A vida é bela e cheia de desafios";
+var palavras = frase.split(" ");
+// console.table(palavras);
+console.log(`A quantidade de palavras é ${palavras.length}`);
+
+// 5. Desafios Extras
+// 21. Dado um vetor [12, 45, 67, 89, 23], exiba o maior número presente nele.
+console.log("-------------------------21-------------------------");
+var vetor = [12, 45, 67, 89, 23];
+var maiorNumero = Math.max(...vetor);
+console.log(`Maior numero é: ${maiorNumero}`);
+
+// 22. Inverta a string "Desenvolvimento" e exiba "otnemivolpsoD".
+console.log("-------------------------22-------------------------");
+var string = "Desenvolvimento";
+var gnirts = string
+  .split("") //quebra a palavra, cada letra numa linha
+  .reverse() //inverte a ordem da palavra
+  .join(""); //junta tudo numa palavra só
+console.log(`String invertida: ${gnirts}`);
+
+// 23. Conte quantas letras "a" existem na frase "Aprender JavaScript é maravilhoso!".
+console.log("-------------------------23-------------------------");
+var frase = "Aprender JavaScript é maravilhoso!";
+var letraA = (frase.match(/a/gi) || []).length;
+console.log(`Número de letras a: ${letraA}`);
+
+// 24. Substitua todas as vogais da string "Desenvolvimento Web" por "*".
+console.log("-------------------------24-------------------------");
+var frase = "Desenvolvimento Web";
+var trocaVogal = frase.replace(/[aeiou]/gi, "*");
+console.log(`Frase com vogais substituídas: ${trocaVogal}`);
+
+// 25. Crie um vetor de 5 números e exiba a média deles.
+console.log("-------------------------25-------------------------");
+var numeros = [10, 20, 30, 40, 50];
+var somaNumeros = 0;
+
+for (let i = 0; i < numeros.length; i++) {
+  somaNumeros += numeros[i];
+}
+
+console.log(`Média dos números é: ${somaNumeros / numeros.length}`);
